@@ -1,0 +1,1 @@
+import{_ as n,c as s,o as a,d as p}from"./app.87eb6f1c.js";const g='{"title":"pandas","description":"","frontmatter":{},"headers":[],"relativePath":"python/pandas.md"}',t={},o=p("",8),c=[o];function e(u,l,k,i,r,d){return a(),s("div",null,c)}var y=n(t,[["render",e]]);export{g as __pageData,y as default};

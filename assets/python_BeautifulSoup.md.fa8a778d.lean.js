@@ -1,0 +1,1 @@
+import{_ as n,c as s,o as t,d as a}from"./app.87eb6f1c.js";const g='{"title":"BeautifulSoup","description":"","frontmatter":{},"headers":[],"relativePath":"python/BeautifulSoup.md"}',p={},o=a("",3),e=[o];function c(l,u,i,k,r,m){return t(),s("div",null,e)}var _=n(p,[["render",c]]);export{g as __pageData,_ as default};

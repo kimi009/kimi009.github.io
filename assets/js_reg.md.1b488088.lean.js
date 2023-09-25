@@ -1,0 +1,1 @@
+import{_ as n,c as s,o as a,d as t}from"./app.87eb6f1c.js";const d='{"title":"\u5E38\u7528\u6B63\u5219\u6C47\u603B","description":"","frontmatter":{},"headers":[],"relativePath":"js/reg.md"}',p={},o=t("",4),e=[o];function c(l,u,k,r,i,m){return a(),s("div",null,e)}var f=n(p,[["render",c]]);export{d as __pageData,f as default};

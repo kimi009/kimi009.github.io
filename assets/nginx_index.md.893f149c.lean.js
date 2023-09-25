@@ -1,0 +1,1 @@
+import{_ as n,c as s,o as a,d as t}from"./app.87eb6f1c.js";const f='{"title":"nginx","description":"","frontmatter":{},"headers":[],"relativePath":"nginx/index.md"}',e={},p=t("",2),o=[p];function c(i,u,l,r,k,_){return a(),s("div",null,o)}var g=n(e,[["render",c]]);export{f as __pageData,g as default};

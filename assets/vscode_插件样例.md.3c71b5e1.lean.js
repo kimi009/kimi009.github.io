@@ -1,0 +1,1 @@
+import{_ as n,c as s,o as a,d as t}from"./app.87eb6f1c.js";const w='{"title":"\u63D2\u4EF6\u6837\u4F8B","description":"","frontmatter":{},"headers":[],"relativePath":"vscode/\u63D2\u4EF6\u6837\u4F8B.md"}',p={},o=t("",2),e=[o];function c(u,l,k,i,r,d){return a(),s("div",null,e)}var g=n(p,[["render",c]]);export{w as __pageData,g as default};

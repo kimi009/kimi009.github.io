@@ -1,0 +1,1 @@
+import{_ as n,c as s,o as a,d as t}from"./app.87eb6f1c.js";var p="/assets/1.5e6fe8a2.png";const m='{"title":"python","description":"","frontmatter":{},"headers":[],"relativePath":"python/python.md"}',o={},e=t("",6),c=[e];function l(u,r,i,k,d,h){return a(),s("div",null,c)}var f=n(o,[["render",l]]);export{m as __pageData,f as default};

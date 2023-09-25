@@ -1,0 +1,1 @@
+import{_ as n,c as s,o as a,d as t}from"./app.87eb6f1c.js";const m='{"title":"vue2","description":"","frontmatter":{},"headers":[{"level":2,"title":"vue2","slug":"vue2"}],"relativePath":"vue2/index.md"}',p={},o=t("",3),e=[o];function c(l,u,k,r,i,d){return a(),s("div",null,e)}var f=n(p,[["render",c]]);export{m as __pageData,f as default};

@@ -1,0 +1,1 @@
+import{_ as n,c as s,o as t,d as a}from"./app.87eb6f1c.js";const _='{"title":"vue\u4EE3\u7801\u7247\u6BB5","description":"","frontmatter":{},"headers":[],"relativePath":"vue2/vue\u4EE3\u7801\u7247\u6BB5.md"}',o={},p=a("",2),e=[p];function u(c,l,r,i,k,q){return t(),s("div",null,e)}var d=n(o,[["render",u]]);export{_ as __pageData,d as default};

@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as a,d as l}from"./app.87eb6f1c.js";const m='{"title":"jsx \u7528\u6CD5","description":"","frontmatter":{},"headers":[{"level":2,"title":"jsx \u7528\u6CD5","slug":"jsx-\u7528\u6CD5"}],"relativePath":"vue2/jsx.md"}',o={},n=l("",9),r=[n];function s(i,d,c,u,_,g){return a(),e("div",null,r)}var h=t(o,[["render",s]]);export{m as __pageData,h as default};

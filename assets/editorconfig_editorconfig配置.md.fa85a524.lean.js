@@ -1,0 +1,1 @@
+import{_ as n,c as a,o as s,d as e}from"./app.87eb6f1c.js";const f='{"title":"editorconfig\u914D\u7F6E","description":"","frontmatter":{},"headers":[],"relativePath":"editorconfig/editorconfig\u914D\u7F6E.md"}',t={},o=e("",2),p=[o];function r(c,i,l,_,d,k){return s(),a("div",null,p)}var h=n(t,[["render",r]]);export{f as __pageData,h as default};

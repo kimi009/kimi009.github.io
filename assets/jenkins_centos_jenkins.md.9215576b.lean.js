@@ -1,0 +1,1 @@
+import{_ as n,c as e,o as s,d as a}from"./app.87eb6f1c.js";const u='{"title":"centos_jenkins","description":"","frontmatter":{},"headers":[],"relativePath":"jenkins/centos_jenkins.md"}',t={},o=a("",3),r=[o];function c(i,p,_,l,k,d){return s(),e("div",null,r)}var m=n(t,[["render",c]]);export{u as __pageData,m as default};

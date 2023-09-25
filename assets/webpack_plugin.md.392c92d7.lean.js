@@ -1,0 +1,1 @@
+import{_ as n,c as s,o as a,d as t}from"./app.87eb6f1c.js";const g='{"title":"\u81EA\u5B9A\u4E49\u63D2\u4EF6","description":"","frontmatter":{},"headers":[],"relativePath":"webpack/plugin.md"}',p={},o=t("",3),e=[o];function c(u,l,r,k,i,q){return a(),s("div",null,e)}var y=n(p,[["render",c]]);export{g as __pageData,y as default};

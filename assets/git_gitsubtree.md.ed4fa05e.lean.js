@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as r,d as i}from"./app.87eb6f1c.js";const d='{"title":"gitsubtree","description":"","frontmatter":{},"headers":[],"relativePath":"git/gitsubtree.md"}',o={},s=i("",3),a=[s];function u(p,l,n,c,_,b){return r(),t("div",null,a)}var m=e(o,[["render",u]]);export{d as __pageData,m as default};

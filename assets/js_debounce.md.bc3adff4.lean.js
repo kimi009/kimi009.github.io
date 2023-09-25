@@ -1,0 +1,1 @@
+import{_ as n,c as s,o as a,d as t}from"./app.87eb6f1c.js";const f='{"title":"\u9632\u6296\u51FD\u6570","description":"","frontmatter":{},"headers":[],"relativePath":"js/debounce.md"}',p={},o=t("",6),e=[o];function c(u,l,k,i,r,m){return a(),s("div",null,e)}var w=n(p,[["render",c]]);export{f as __pageData,w as default};

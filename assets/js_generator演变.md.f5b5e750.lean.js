@@ -1,0 +1,1 @@
+import{_ as n,c as s,o as a,d as t}from"./app.87eb6f1c.js";const f='{"title":"generator\u6F14\u53D8","description":"","frontmatter":{},"headers":[],"relativePath":"js/generator\u6F14\u53D8.md"}',p={},o=t("",3),e=[o];function c(u,l,k,r,i,m){return a(),s("div",null,e)}var _=n(p,[["render",c]]);export{f as __pageData,_ as default};

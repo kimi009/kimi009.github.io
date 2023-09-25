@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>文件切片上传下载 | kimi 博客</title>
+    <meta name="description" content="kimi的踩坑记录">
+    <link rel="stylesheet" href="/assets/style.c3210e46.css">
+    <link rel="modulepreload" href="/assets/app.87eb6f1c.js">
+    <link rel="modulepreload" href="/assets/js_文件切片上传下载.md.66344dc5.lean.js">
+    
+    <link rel="icon" href="/1.png">
+  <meta name="keywords" content="vitepress kimi">
+  <meta name="twitter:title" content="文件切片上传下载 | kimi 博客">
+  <meta property="og:title" content="文件切片上传下载 | kimi 博客">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme"><header class="nav-bar" data-v-675d8756><div class="sidebar-button" data-v-675d8756><svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z" class></path></svg></div><a class="nav-bar-title" href="/" aria-label="kimi 博客, back to home" data-v-675d8756 data-v-cc01ef16><!----> kimi 博客</a><div class="flex-grow" data-v-675d8756></div><div class="nav" data-v-675d8756><nav class="nav-links" data-v-675d8756 data-v-eab3edfe><!--[--><div class="item" data-v-eab3edfe><div class="nav-dropdown-link" data-v-eab3edfe data-v-56bf3a3f><button class="button" data-v-56bf3a3f><span class="button-text" data-v-56bf3a3f>前端基础</span><span class="right button-arrow" data-v-56bf3a3f></span></button><ul class="dialog" data-v-56bf3a3f><!--[--><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/ts/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>Typescript</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/html/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>HTML</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item active" href="/js/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>JS</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/css/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>CSS</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/web/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>web</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/canvas/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>canvas</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><!--]--></ul></div></div><div class="item" data-v-eab3edfe><div class="nav-dropdown-link" data-v-eab3edfe data-v-56bf3a3f><button class="button" data-v-56bf3a3f><span class="button-text" data-v-56bf3a3f>前端框架</span><span class="right button-arrow" data-v-56bf3a3f></span></button><ul class="dialog" data-v-56bf3a3f><!--[--><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/vue2/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>Vue2</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/vue3/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>Vue3</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/react/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>React</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/Nuxt/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>Nuxt</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/microFront/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>microFront</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><!--]--></ul></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/thirdLib/" data-v-b8818f8c>第三方库 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-dropdown-link" data-v-eab3edfe data-v-56bf3a3f><button class="button" data-v-56bf3a3f><span class="button-text" data-v-56bf3a3f>工程化</span><span class="right button-arrow" data-v-56bf3a3f></span></button><ul class="dialog" data-v-56bf3a3f><!--[--><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/vite/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>vite</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/monorepo/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>monorepo</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/webpack/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>Webpack</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/husky/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>husky</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/prettier/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>prettier</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/editorconfig/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>editorconfig</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/npm/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>npm</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/pnpm/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>pnpm</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/roolup/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>roolup</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/esbuild/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>esbuild</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/eslint/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>eslint</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/vscode/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>vscode</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><!--]--></ul></div></div><div class="item" data-v-eab3edfe><div class="nav-dropdown-link" data-v-eab3edfe data-v-56bf3a3f><button class="button" data-v-56bf3a3f><span class="button-text" data-v-56bf3a3f>运维</span><span class="right button-arrow" data-v-56bf3a3f></span></button><ul class="dialog" data-v-56bf3a3f><!--[--><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/git/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>git</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/nginx/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>nginx</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/jenkins/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>jenkins</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/docker/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>docker</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/pm2/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>pm2</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/linux/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>linux</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><!--]--></ul></div></div><div class="item" data-v-eab3edfe><div class="nav-dropdown-link" data-v-eab3edfe data-v-56bf3a3f><button class="button" data-v-56bf3a3f><span class="button-text" data-v-56bf3a3f>后端</span><span class="right button-arrow" data-v-56bf3a3f></span></button><ul class="dialog" data-v-56bf3a3f><!--[--><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/nodejs/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>nodejs</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/nest/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>nest</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/python/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>python</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><!--]--></ul></div></div><div class="item" data-v-eab3edfe><div class="nav-dropdown-link" data-v-eab3edfe data-v-56bf3a3f><button class="button" data-v-56bf3a3f><span class="button-text" data-v-56bf3a3f>数据库</span><span class="right button-arrow" data-v-56bf3a3f></span></button><ul class="dialog" data-v-56bf3a3f><!--[--><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/mysql/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>mysql</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/mongodb/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>mongodb</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><!--]--></ul></div></div><!--]--><!----><!----></nav></div><!--[--><!--]--></header><aside class="sidebar" data-v-83e92a68><nav class="nav-links nav" data-v-83e92a68 data-v-eab3edfe><!--[--><div class="item" data-v-eab3edfe><div class="nav-dropdown-link" data-v-eab3edfe data-v-56bf3a3f><button class="button" data-v-56bf3a3f><span class="button-text" data-v-56bf3a3f>前端基础</span><span class="right button-arrow" data-v-56bf3a3f></span></button><ul class="dialog" data-v-56bf3a3f><!--[--><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/ts/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>Typescript</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/html/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>HTML</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item active" href="/js/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>JS</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/css/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>CSS</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/web/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>web</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/canvas/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>canvas</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><!--]--></ul></div></div><div class="item" data-v-eab3edfe><div class="nav-dropdown-link" data-v-eab3edfe data-v-56bf3a3f><button class="button" data-v-56bf3a3f><span class="button-text" data-v-56bf3a3f>前端框架</span><span class="right button-arrow" data-v-56bf3a3f></span></button><ul class="dialog" data-v-56bf3a3f><!--[--><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/vue2/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>Vue2</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/vue3/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>Vue3</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/react/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>React</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/Nuxt/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>Nuxt</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/microFront/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>microFront</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><!--]--></ul></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/thirdLib/" data-v-b8818f8c>第三方库 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-dropdown-link" data-v-eab3edfe data-v-56bf3a3f><button class="button" data-v-56bf3a3f><span class="button-text" data-v-56bf3a3f>工程化</span><span class="right button-arrow" data-v-56bf3a3f></span></button><ul class="dialog" data-v-56bf3a3f><!--[--><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/vite/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>vite</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/monorepo/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>monorepo</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/webpack/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>Webpack</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/husky/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>husky</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/prettier/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>prettier</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/editorconfig/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>editorconfig</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/npm/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>npm</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/pnpm/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>pnpm</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/roolup/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>roolup</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/esbuild/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>esbuild</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/eslint/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>eslint</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/vscode/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>vscode</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><!--]--></ul></div></div><div class="item" data-v-eab3edfe><div class="nav-dropdown-link" data-v-eab3edfe data-v-56bf3a3f><button class="button" data-v-56bf3a3f><span class="button-text" data-v-56bf3a3f>运维</span><span class="right button-arrow" data-v-56bf3a3f></span></button><ul class="dialog" data-v-56bf3a3f><!--[--><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/git/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>git</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/nginx/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>nginx</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/jenkins/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>jenkins</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/docker/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>docker</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/pm2/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>pm2</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/linux/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>linux</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><!--]--></ul></div></div><div class="item" data-v-eab3edfe><div class="nav-dropdown-link" data-v-eab3edfe data-v-56bf3a3f><button class="button" data-v-56bf3a3f><span class="button-text" data-v-56bf3a3f>后端</span><span class="right button-arrow" data-v-56bf3a3f></span></button><ul class="dialog" data-v-56bf3a3f><!--[--><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/nodejs/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>nodejs</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/nest/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>nest</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/python/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>python</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><!--]--></ul></div></div><div class="item" data-v-eab3edfe><div class="nav-dropdown-link" data-v-eab3edfe data-v-56bf3a3f><button class="button" data-v-56bf3a3f><span class="button-text" data-v-56bf3a3f>数据库</span><span class="right button-arrow" data-v-56bf3a3f></span></button><ul class="dialog" data-v-56bf3a3f><!--[--><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/mysql/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>mysql</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/mongodb/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>mongodb</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><!--]--></ul></div></div><!--]--><!----><!----></nav><!--[--><!--]--><ul class="sidebar-links" data-v-83e92a68><!--[--><li class="sidebar-link"><a class="sidebar-link-item" href="/js/index">JavaScript</a><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="/js/interview">面试</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/js/designPatterns">设计模式</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/js/arrowFn">箭头函数</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/js/cookie">Cookie 问题</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/js/url">url编码</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/js/promise">promise</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/js/reg">正则</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/js/拷贝">拷贝</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/js/原型链">原型链</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/js/package.json详解">package.json详解</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/js/复制粘贴">复制粘贴</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/js/树转化">树转化</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/js/compose函数">compose函数</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/js/V8 垃圾回收机制">V8 垃圾回收机制</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/js/generator演变">generator演变</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/js/虚拟滚动">虚拟滚动</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/js/js加载方式">js加载方式</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/js/位运算">位运算</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/js/最长递增子序列">最长递增子序列</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/js/删除树节点">删除树节点</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/js/深度广度遍历">深度广度遍历</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item active" href="/js/文件切片上传下载">文件切片上传下载</a><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="#一、前端文件流操作">一、前端文件流操作</a><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="#数据流和文件处理的基本概念">数据流和文件处理的基本概念</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#blob-对象和-arraybuffer：处理二进制数据">Blob 对象和 ArrayBuffer：处理二进制数据</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#使用-filereader-进行文件读取">使用 FileReader 进行文件读取</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#将文件流展示在前端页面中">将文件流展示在前端页面中</a><!----></li></ul></li><li class="sidebar-link"><a class="sidebar-link-item" href="#二、文件切片下载">二、文件切片下载</a><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="#传统文件下载的性能问题">传统文件下载的性能问题</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#利用文件切片提升下载效率">利用文件切片提升下载效率</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#实现客户端切片下载的方案">实现客户端切片下载的方案</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#显示下载进度和完成状态">显示下载进度和完成状态</a><!----></li></ul></li><li class="sidebar-link"><a class="sidebar-link-item" href="#三、大文件上传的问题与解决方案">三、大文件上传的问题与解决方案</a><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="#传统的文件上传方式存在的问题">传统的文件上传方式存在的问题</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#前端文件切片上传的优势">前端文件切片上传的优势</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#实现前端切片上传的方法">实现前端切片上传的方法</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#实现断点续传的技术：记录和恢复上传状态">实现断点续传的技术：记录和恢复上传状态</a><!----></li></ul></li><li class="sidebar-link"><a class="sidebar-link-item" href="#四、优化用户体验：切片下载与上传的应用场景">四、优化用户体验：切片下载与上传的应用场景</a><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="#后台管理系统中的文件下载和上传：">后台管理系统中的文件下载和上传：</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#图片-视频上传和预览：">图片/视频上传和预览：</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#云存储和云盘应用中的文件操作：">云存储和云盘应用中的文件操作：</a><!----></li></ul></li></ul></li><li class="sidebar-link"><a class="sidebar-link-item" href="/js/面试一">面试一</a><!----></li></ul></li><!--]--></ul><!--[--><!--]--></aside><div class="sidebar-mask"></div><main class="page" data-v-7eddb2c4><div class="container" data-v-7eddb2c4><!--[--><!--]--><div style="position:relative;" class="content" data-v-7eddb2c4><div><h1 id="文件切片上传下载" tabindex="-1">文件切片上传下载 <a class="header-anchor" href="#文件切片上传下载" aria-hidden="true">#</a></h1><h1 id="【大文件】上传、下载终极解决方案：切片！！！" tabindex="-1">【大文件】上传、下载终极解决方案：切片！！！ <a class="header-anchor" href="#【大文件】上传、下载终极解决方案：切片！！！" aria-hidden="true">#</a></h1><p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/mshqAkialV7G9ficoicDnn1G1iaT11HWvqhy8g8UWJENsTuCvwfJkmlZYuaNJ4iaB80MmCJtNd5CTjXRoQyfO8GQib2Q/640?wx_fmt=other&amp;wxfrom=13" alt=""></p><blockquote><p>文件传输是一个常见的需求。对于大文件的下载和上传，直接使用传统的方式可能会遇到性能和用户体验方面的问题。</p><p>幸运的是，前端技术提供了一些高效的解决方案：文件流操作和切片下载与上传。本文将深入探讨这些技术，帮助你理解它们的原理和实现方法，以优化文件传输效率和提升用户体验。</p></blockquote><h2 id="一、前端文件流操作" tabindex="-1">一、前端文件流操作 <a class="header-anchor" href="#一、前端文件流操作" aria-hidden="true">#</a></h2><p>在前端开发中，文件流操作是指通过数据流的方式处理文件，对文件进行<code>读取</code>、<code>写入</code>和<code>展示</code>等操作。下面详细介绍了前端文件流操作的几个基本概念和技术。</p><h3 id="数据流和文件处理的基本概念" tabindex="-1">数据流和文件处理的基本概念 <a class="header-anchor" href="#数据流和文件处理的基本概念" aria-hidden="true">#</a></h3><p>数据流是指连<code>续的数据序列</code>，可以从一个源传输到另一个目的地。在前端开发中，文件可以被看作数据流的一种形式，可以通过数据流的方式进行处理。 文件处理涉及读取和写入文件的操作，包括读取文件的内容、写入数据到文件，以及对文件进行删除、重命名等操作。</p><h3 id="blob-对象和-arraybuffer：处理二进制数据" tabindex="-1">Blob 对象和 ArrayBuffer：处理二进制数据 <a class="header-anchor" href="#blob-对象和-arraybuffer：处理二进制数据" aria-hidden="true">#</a></h3><p>在前端处理文件时，经常需要处理二进制数据。<code>Blob</code>（Binary Large Object）对象是用来表示二进制数据的一个接口，可以存储大量的二进制数据。Blob 对象可以通过构造函数进行创建，也可以通过其他 API 生成，例如通过 FormData 对象获取上传的文件。 而 ArrayBuffer 是 JavaScript 中的一个对象类型，用于表示一个通用的、固定长度的二进制数据缓冲区。我们可以通过 <code>ArrayBuffer</code> 来操作和处理文件的二进制数据。</p><p><strong>代码如下：</strong></p><div class="language-"><pre><code>import React, { useState } from &#39;react&#39;;
+
+function FileInput() {
+  const [fileContent, setFileContent] = useState(&#39;&#39;);
+
+  // 读取文件内容到ArrayBuffer
+  function readFileToArrayBuffer(file) {
+    return new Promise((resolve, reject) =&gt; {
+      const reader = new FileReader();
+
+      // 注册文件读取完成后的回调函数
+      reader.onload = function(event) {
+        const arrayBuffer = event.target.result;
+        resolve(arrayBuffer);
+      };
+
+      // 读取文件内容到ArrayBuffer
+      reader.readAsArrayBuffer(file);
+    });
+  }
+
+  // 将ArrayBuffer转为十六进制字符串
+  function arrayBufferToHexString(arrayBuffer) {
+    const uint8Array = new Uint8Array(arrayBuffer);
+    let hexString = &#39;&#39;;
+    for (let i = 0; i &lt; uint8Array.length; i++) {
+      const hex = uint8Array[i].toString(16).padStart(2, &#39;0&#39;);
+      hexString += hex;
+    }
+    return hexString;
+  }
+
+  // 处理文件选择事件
+  function handleFileChange(event) {
+    const file = event.target.files[0];  // 获取选中的文件
+
+    if (file) {
+      readFileToArrayBuffer(file)
+        .then(arrayBuffer =&gt; {
+          const hexString = arrayBufferToHexString(arrayBuffer);
+          setFileContent(hexString);
+        })
+        .catch(error =&gt; {
+          console.error(&#39;文件读取失败:&#39;, error);
+        });
+    } else {
+      setFileContent(&#39;请选择一个文件&#39;);
+    }
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;input type=&quot;file&quot; onChange={handleFileChange} /&gt;
+      &lt;div&gt;
+        &lt;h4&gt;文件内容：&lt;/h4&gt;
+        &lt;pre&gt;{fileContent}&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default FileInput;
+</code></pre></div><p>上面代码里，我们创建了一个名为 <code>FileInput</code> 的函数式组件。该组件包含一个文件选择框和一个用于显示文件内容的 <code>&lt;pre&gt;</code> 元素。当用户选择文件时，通过 <code>FileReader</code> 将文件内容读取为 <code>ArrayBuffer</code>，然后将 <code>ArrayBuffer</code> 转换为十六进制字符串，并将结果显示在页面上。</p><h3 id="使用-filereader-进行文件读取" tabindex="-1">使用 FileReader 进行文件读取 <a class="header-anchor" href="#使用-filereader-进行文件读取" aria-hidden="true">#</a></h3><p><code>FileReader</code> 是前端浏览器提供的一个 API，用于读取文件内容。通过 FileReader，我们可以通过异步方式读取文件，并将文件内容转换为可用的数据形式，比如文本数据或二进制数据。 FileReader 提供了一些读取文件的方法，例如 <code>readAsText()、readAsArrayBuffer()</code> 等，可以根据需要选择合适的方法来读取文件内容。</p><h3 id="将文件流展示在前端页面中" tabindex="-1">将文件流展示在前端页面中 <a class="header-anchor" href="#将文件流展示在前端页面中" aria-hidden="true">#</a></h3><p>一旦我们成功地读取了文件的内容，就可以将文件流展示在前端页面上。具体的展示方式取决于文件的类型。例如，对于文本文件，可以直接将其内容显示在页面的文本框或区域中；对于图片文件，可以使用 <code>&lt;img&gt;</code> 标签展示图片；对于音视频文件，可以使用 <code>&lt;video&gt;</code> 或 <code>&lt;audio&gt;</code> 标签来播放。 通过将文件流展示在前端页面上，我们可以实现在线预览和查看文件内容的功能。</p><p>好的，这一部分就基本介绍完毕，总结一下。前端文件操作流是处理<code>大型文件</code>的一种常见方式，他可以通过数据流的方式对文件进行操作。<code>Blob</code>对象 和 <code>ArrayBuffer</code>是处理二进制数据的重要工具。而<code>FileReader</code>则是读取文件内容的的关键组件。通过这些技术，我们可以方便的在前端页面上进行操作或者文件展示。</p><h2 id="二、文件切片下载" tabindex="-1">二、文件切片下载 <a class="header-anchor" href="#二、文件切片下载" aria-hidden="true">#</a></h2><p>这一步就进入到我们今天文章主题了，先来主要的看下流程</p><div class="language-"><pre><code>graph LR
+A(开始) --&gt; B{选择文件}
+B -- 用户选择文件 --&gt; C[切割文件为多个切片]
+C --&gt; D{上传切片}
+D -- 上传完成 --&gt; E[合并切片为完整文件]
+E -- 文件合并完成 --&gt; F(上传成功)
+D -- 上传中断 --&gt; G{保存上传进度}
+G -- 上传恢复 --&gt; D
+G -- 取消上传 --&gt; H(上传取消)
+</code></pre></div><h3 id="传统文件下载的性能问题" tabindex="-1">传统文件下载的性能问题 <a class="header-anchor" href="#传统文件下载的性能问题" aria-hidden="true">#</a></h3><p>文件切片下载是一种提升文件下载效率的技术，通过将大文件分割成多个小片段（切片），并使用多个并发请求同时下载这些切片，从而加快整体下载速度。</p><p>传统的文件下载方式对于大文件来说存在性能问题。当用户请求下载一个大文件时，服务器需要将整个文件发送给客户端。这会导致以下几个问题：</p><ol><li>较长的等待时间：大文件需要较长的时间来传输到客户端，用户需要等待很长时间才能开始使用文件。</li><li>网络阻塞：由于下载过程中占用了网络带宽，其他用户可能会遇到下载速度慢的问题。</li><li>断点续传困难：如果下载过程中出现网络故障或者用户中断下载，需要重新下载整个文件，无法继续之前的下载进度。</li></ol><h3 id="利用文件切片提升下载效率" tabindex="-1">利用文件切片提升下载效率 <a class="header-anchor" href="#利用文件切片提升下载效率" aria-hidden="true">#</a></h3><p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/mshqAkialV7G9ficoicDnn1G1iaT11HWvqhyntDYGiaomdUuPuF9CKq85SKydhAP6FS5WTYlSWk46ia2d1xicHn5SUxzQ/640?wx_fmt=other&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="">文件切片下载通过将文件分割成多个小片段，每个片段大小通常在几百KB到几MB之间。然后客户端通过多个并发请求同时下载这些片段。这样做的好处是：</p><ol><li>快速启动：客户端可以快速开始下载，因为只需要下载第一个切片即可。</li><li>并发下载：通过使用多个并发请求下载切片，可以充分利用带宽，并提高整体下载速度。</li><li>断点续传：如果下载中断，客户端只需要重新下载中断的切片，而不需要重新下载整个文件。</li></ol><p><strong>切片上传代码示例：</strong></p><div class="language-"><pre><code>const [selectedFile, setSelectedFile] = useState(null); 
+const [progress, setProgress] = useState(0);
+ // 处理文件选择事件
+ function handleFileChange(event) {
+   setSelectedFile(event.target.files[0]);
+ }
+
+ // 处理文件上传事件
+ function handleFileUpload() {
+   if (selectedFile) {
+     // 计算切片数量和每个切片的大小
+     const fileSize = selectedFile.size;
+     const chunkSize = 1024 * 1024; // 设置切片大小为1MB
+     const totalChunks = Math.ceil(fileSize / chunkSize);
+
+     // 创建FormData对象，并添加文件信息
+     const formData = new FormData();
+     formData.append(&#39;file&#39;, selectedFile);
+     formData.append(&#39;totalChunks&#39;, totalChunks);
+
+     // 循环上传切片
+     for (let chunkNumber = 0; chunkNumber &lt; totalChunks; chunkNumber++) {
+       const start = chunkNumber * chunkSize;
+       const end = Math.min(start + chunkSize, fileSize);
+       const chunk = selectedFile.slice(start, end);
+       formData.append(`chunk-${chunkNumber}`, chunk, selectedFile.name);
+     }
+
+     // 发起文件上传请求
+     axios.post(&#39;/upload&#39;, formData, {
+       onUploadProgress: progressEvent =&gt; {
+         const progress = Math.round((progressEvent.loaded / progressEvent.total) * 100);
+         setProgress(progress);
+       }
+     })
+       .then(response =&gt; {
+         console.log(&#39;文件上传成功:&#39;, response.data);
+       })
+       .catch(error =&gt; {
+         console.error(&#39;文件上传失败:&#39;, error);
+       });
+   }
+ }
+</code></pre></div><p>当涉及到切片上传和下载时，前端使用的技术通常是基于前端库或框架提供的文件处理功能，结合后端服务实现。</p><p>上面代码里我们提到了文件如何切片上传。</p><ul><li>当用户选择文件后，通过 <code>handleFileChange</code> 函数处理文件选择事件，将选择的文件保存在 <code>selectedFile</code> 状态中。</li><li>当用户点击上传按钮时，通过 <code>handleFileUpload</code> 函数处理文件上传事件。</li><li>在 <code>handleFileUpload</code> 函数中，计算切片数量和每个切片的大小，并创建一个 <code>FormData</code> 对象用于存储文件信息和切片数据。</li></ul><h3 id="实现客户端切片下载的方案" tabindex="-1">实现客户端切片下载的方案 <a class="header-anchor" href="#实现客户端切片下载的方案" aria-hidden="true">#</a></h3><p>实现客户端切片下载的基本方案如下：</p><ol><li>服务器端将大文件切割成多个切片，并为每个切片生成唯一的标识符。</li><li>客户端发送请求获取切片列表，同时开始下载第一个切片。</li><li>客户端在下载过程中，根据切片列表发起并发请求下载其他切片，并逐渐拼接合并下载的数据。</li><li>当所有切片都下载完成后，客户端将下载的数据合并为完整的文件。</li></ol><p><strong>代码示例：</strong></p><div class="language-"><pre><code>function downloadFile() {
+  // 发起文件下载请求
+  fetch(&#39;/download&#39;, {
+    method: &#39;GET&#39;,
+    headers: {
+      &#39;Content-Type&#39;: &#39;application/json&#39;,
+    },
+  })
+    .then(response =&gt; response.json())
+    .then(data =&gt; {
+      const totalSize = data.totalSize;
+      const totalChunks = data.totalChunks;
+
+      let downloadedChunks = 0;
+      let chunks = [];
+
+      // 下载每个切片
+      for (let chunkNumber = 0; chunkNumber &lt; totalChunks; chunkNumber++) {
+        fetch(`/download/${chunkNumber}`, {
+          method: &#39;GET&#39;,
+        })
+          .then(response =&gt; response.blob())
+          .then(chunk =&gt; {
+            downloadedChunks++;
+            chunks.push(chunk);
+
+            // 当所有切片都下载完成时
+            if (downloadedChunks === totalChunks) {
+              // 合并切片
+              const mergedBlob = new Blob(chunks);
+
+              // 创建对象 URL，生成下载链接
+              const downloadUrl = window.URL.createObjectURL(mergedBlob);
+
+              // 创建 &lt;a&gt; 元素并设置属性
+              const link = document.createElement(&#39;a&#39;);
+              link.href = downloadUrl;
+              link.setAttribute(&#39;download&#39;, &#39;file.txt&#39;);
+
+              // 模拟点击下载
+              link.click();
+
+              // 释放资源
+              window.URL.revokeObjectURL(downloadUrl);
+            }
+          });
+      }
+    })
+    .catch(error =&gt; {
+      console.error(&#39;文件下载失败:&#39;, error);
+    });
+}
+</code></pre></div><p>我们看下代码，首先使用<code>BLOB</code>对象创建一共对象URL，用于生成下载连接，然后创建<code>a</code>标签并且设置<code>href</code>的属性为刚刚创建的对象URL,继续设置<code>a</code>标签的<code>download</code>属性是文件名，方便点击的时候自动下载文件。</p><h3 id="显示下载进度和完成状态" tabindex="-1">显示下载进度和完成状态 <a class="header-anchor" href="#显示下载进度和完成状态" aria-hidden="true">#</a></h3><p>为了显示下载进度和完成状态，可以在客户端实现以下功能：</p><ol><li>显示进度条：客户端可以通过监听每个切片的下载进度来计算整体下载进度，并实时更新进度条的显示。</li><li>显示完成状态：当所有切片都下载完成后，客户端可以显示下载完成的状态，例如显示一个完成的图标或者文本。</li></ol><p>这里我们可以继续接着<code>切片上传代码示例</code>里的继续写。</p><p><strong>代码示例：</strong></p><div class="language-"><pre><code>  // 处理文件下载事件
+  function handleFileDownload() {
+    axios.get(&#39;/download&#39;, {
+      responseType: &#39;blob&#39;,
+      onDownloadProgress: progressEvent =&gt; {
+        const progress = Math.round((progressEvent.loaded / progressEvent.total) * 100);
+        setProgress(progress);
+      }
+    })
+      .then(response =&gt; {
+        // 创建一个临时的URL对象用于下载
+        const url = window.URL.createObjectURL(new Blob([response.data]));
+        const link = document.createElement(&#39;a&#39;);
+        link.href = url;
+        link.setAttribute(&#39;download&#39;, &#39;file.txt&#39;);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      })
+      .catch(error =&gt; {
+        console.error(&#39;文件下载失败:&#39;, error);
+      });
+  }
+  
+  
+  &lt;button onClick={handleFileDownload}&gt;下载文件&lt;/button&gt;
+  &lt;div&gt;进度：{progress}%&lt;/div&gt;
+</code></pre></div><ul><li>当用户点击下载按钮时，通过 <code>handleFileDownload</code> 函数处理文件下载事件。</li><li>在 <code>handleFileDownload</code> 函数中，使用 <code>axios</code> 库发起文件下载请求，并设置 <code>responseType: &#39;blob&#39;</code> 表示返回二进制数据。</li><li>通过监听 <code>onDownloadProgress</code> 属性获取下载进度，并更新进度条的显示。</li><li>下载完成后，创建一个临时的 URL 对象用于下载，并通过动态创建 <code>&lt;a&gt;</code> 元素模拟点击下载。</li></ul><h2 id="三、大文件上传的问题与解决方案" tabindex="-1">三、大文件上传的问题与解决方案 <a class="header-anchor" href="#三、大文件上传的问题与解决方案" aria-hidden="true">#</a></h2><h3 id="传统的文件上传方式存在的问题" tabindex="-1">传统的文件上传方式存在的问题 <a class="header-anchor" href="#传统的文件上传方式存在的问题" aria-hidden="true">#</a></h3><ul><li>大文件上传耗时长，容易导致请求超时。</li><li>占用服务器和网络带宽资源，可能影响其他用户的访问速度。</li><li>如果上传中断，需要重新上传整个文件，效率低下。</li><li>难以实现上传进度的显示和控制。</li></ul><h3 id="前端文件切片上传的优势" tabindex="-1">前端文件切片上传的优势 <a class="header-anchor" href="#前端文件切片上传的优势" aria-hidden="true">#</a></h3><ul><li>将大文件分割为更小的文件切片，分多次上传，提高上传效率和稳定性。</li><li>提供上传进度的监控和展示，提高用户体验。</li><li>充分利用浏览器的并发上传能力，减轻服务器负担。</li><li>实现断点续传功能，避免重复上传已上传的部分。</li></ul><h3 id="实现前端切片上传的方法" tabindex="-1">实现前端切片上传的方法 <a class="header-anchor" href="#实现前端切片上传的方法" aria-hidden="true">#</a></h3><ol><li><div class="language-"><pre><code>- 使用 JavaScript 的 `File API` 获取文件对象，并使用 `Blob.prototype.slice()` 方法将文件切割为多个切片。
+</code></pre></div></li><li><ul><li>使用 <code>FormData</code> 对象将切片数据通过 AJAX 或 Fetch API 发送到服务器。</li><li>在后端服务器上接收切片并保存到临时存储中，等待后续合并。</li><li>在客户端通过监听上传进度事件，在进度条或提示中展示上传进度。 <strong>代码示例</strong></li></ul></li></ol><div class="language-"><pre><code>const [file, setFile] = useState(null);  //用来存放我本地上传的文件
+
+const chunkSize = 1024 * 1024; // 1MB 切片大小
+
+  const upload = () =&gt; {
+    if (!file) {
+      alert(&quot;请选择要上传的文件！&quot;);
+      return;
+    }
+
+    const chunkSize = 1024 * 1024; // 1MB
+
+    let start = 0;
+    let end = Math.min(chunkSize, file.size);
+
+    while (start &lt; file.size) {
+      const chunk = file.slice(start, end);
+      
+      // 创建FormData对象
+      const formData = new FormData();
+      formData.append(&#39;file&#39;, chunk);
+
+      // 发送切片到服务器
+      fetch(&#39;上传接口xxxx&#39;, {
+        method: &#39;POST&#39;,
+        body: formData
+      })
+      .then(response =&gt; response.json())
+      .then(data =&gt; {
+        console.log(data);
+        // 处理响应结果
+      })
+      .catch(error =&gt; {
+        console.error(error);
+        // 处理错误
+      });
+
+      start = end;
+      end = Math.min(start + chunkSize, file.size);
+    }
+  };
+  
+ return (
+    &lt;div&gt;
+      &lt;input type=&quot;file&quot; onChange={handleFileChange} /&gt;
+      &lt;button onClick={upload}&gt;上传&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre></div><p>在上面的代码中，创建了一个名为<code>Upload</code>的函数组件。它使用了 React 的<code>useState</code>钩子来管理选中的文件。</p><p>通过<code>onChange</code>事件监听文件输入框的变化，并在<code>handleFileChange</code>函数中获取选择的文件，并更新<code>file</code>状态。</p><p>点击“上传”按钮时，调用<code>upload</code>函数。它与之前的示例代码类似，将文件切割为多个大小相等的切片，并使用<code>FormData</code>对象和<code>fetch</code>函数发送切片数据到服务器。</p><h3 id="实现断点续传的技术：记录和恢复上传状态" tabindex="-1">实现断点续传的技术：记录和恢复上传状态 <a class="header-anchor" href="#实现断点续传的技术：记录和恢复上传状态" aria-hidden="true">#</a></h3><ul><li>在前端，可以使用 <code>localStorage</code> 或 <code>sessionStorage</code> 来存储已上传的切片信息，包括已上传的切片索引、切片大小等。</li><li>每次上传前，先检查本地存储中是否存在已上传的切片信息，若存在，则从断点处继续上传。</li><li>在后端，可以使用一个临时文件夹或数据库来记录已接收到的切片信息，包括已上传的切片索引、切片大小等。</li><li>在上传完成前，保存上传状态，以便在上传中断后能够恢复上传进度。</li></ul><div class="language-"><pre><code>import React, { useState, useRef, useEffect } from &#39;react&#39;;
+
+function Upload() {
+  const [file, setFile] = useState(null);
+  const [uploadedChunks, setUploadedChunks] = useState([]);
+  const [uploading, setUploading] = useState(false);
+  const uploadRequestRef = useRef();
+
+  const handleFileChange = (event) =&gt; {
+    const selectedFile = event.target.files[0];
+    setFile(selectedFile);
+  };
+
+  const uploadChunk = (chunk) =&gt; {
+    // 创建FormData对象
+    const formData = new FormData();
+    formData.append(&#39;file&#39;, chunk);
+
+    // 发送切片到服务器
+    return fetch(&#39;your-upload-url&#39;, {
+      method: &#39;POST&#39;,
+      body: formData
+    })
+    .then(response =&gt; response.json())
+    .then(data =&gt; {
+      console.log(data);
+      // 处理响应结果
+      return data;
+    });
+  };
+
+  const upload = async () =&gt; {
+    if (!file) {
+      alert(&quot;请选择要上传的文件！&quot;);
+      return;
+    }
+
+    const chunkSize = 1024 * 1024; // 1MB
+    const totalChunks = Math.ceil(file.size / chunkSize);
+
+    let start = 0;
+    let end = Math.min(chunkSize, file.size);
+
+    setUploading(true);
+
+    for (let i = 0; i &lt; totalChunks; i++) {
+      const chunk = file.slice(start, end);
+      const uploadedChunkIndex = uploadedChunks.indexOf(i);
+
+      if (uploadedChunkIndex === -1) {
+        try {
+          const response = await uploadChunk(chunk);
+          setUploadedChunks((prevChunks) =&gt; [...prevChunks, i]);
+
+          // 保存已上传的切片信息到本地存储
+          localStorage.setItem(&#39;uploadedChunks&#39;, JSON.stringify(uploadedChunks));
+        } catch (error) {
+          console.error(error);
+          // 处理错误
+        }
+      }
+
+      start = end;
+      end = Math.min(start + chunkSize, file.size);
+    }
+
+    setUploading(false);
+
+    // 上传完毕，清除本地存储的切片信息
+    localStorage.removeItem(&#39;uploadedChunks&#39;);
+  };
+
+  useEffect(() =&gt; {
+    const storedUploadedChunks = localStorage.getItem(&#39;uploadedChunks&#39;);
+
+    if (storedUploadedChunks) {
+      setUploadedChunks(JSON.parse(storedUploadedChunks));
+    }
+  }, []);
+
+  return (
+    &lt;div&gt;
+      &lt;input type=&quot;file&quot; onChange={handleFileChange} /&gt;
+      &lt;button onClick={upload} disabled={uploading}&gt;
+        {uploading ? &#39;上传中...&#39; : &#39;上传&#39;}
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre></div><p>首先，使用<code>useState</code>钩子创建了一个<code>uploadedChunks</code>状态来保存已上传的切片索引数组。初始值为空数组。</p><p>然后，我们使用<code>useRef</code>钩子创建了一个<code>uploadRequestRef</code>引用，用于存储当前的上传请求。</p><p>在<code>handleFileChange</code>函数中，我们更新了<code>file</code>状态以选择要上传的文件。</p><p>在<code>uploadChunk</code>函数中，我们发送切片到服务器，并返回一个<code>Promise</code>对象来处理响应结果。</p><p>在<code>upload</code>函数中，我们添加了断点续传的逻辑。首先，我们获取切片的总数，并设置<code>uploading</code>状态为<code>true</code>来禁用上传按钮。</p><p>然后，我们使用<code>for</code>循环遍历所有切片。对于每个切片，我们检查<code>uploadedChunks</code>数组中是否已经包含该索引，如果不包含，则进行上传操作。</p><p>在上传切片之后，我们将已上传的切片索引添加到<code>uploadedChunks</code>数组，并使用<code>localStorage</code>保存已上传的切片信息。</p><p>最后，在上传完毕后，我们将<code>uploading</code>状态设为<code>false</code>，并清除本地存储的切片信息。</p><blockquote><p>在实现大文件上传时要考虑服务器端的处理能力和存储空间，以及安全性问题。同时，为了保障断点续传的准确性，应该尽量避免并发上传相同文件的情况，可以采用文件唯一标识符或用户会话标识符进行区分。</p></blockquote><h2 id="四、优化用户体验：切片下载与上传的应用场景" tabindex="-1">四、优化用户体验：切片下载与上传的应用场景 <a class="header-anchor" href="#四、优化用户体验：切片下载与上传的应用场景" aria-hidden="true">#</a></h2><h3 id="后台管理系统中的文件下载和上传：" tabindex="-1">后台管理系统中的文件下载和上传： <a class="header-anchor" href="#后台管理系统中的文件下载和上传：" aria-hidden="true">#</a></h3><ul><li>文件下载：在后台管理系统中，用户可能需要下载大型文件，如报表、日志文件、数据库备份等。通过将文件切片下载，可以提高下载速度和稳定性，同时允许用户中断下载并从中断处继续下载。</li><li>文件上传：后台管理系统中，用户可能需要上传大型文件，如数据导入、文件备份等。使用切片上传可以提高上传效率，分批上传文件切片，并显示上传进度，使用户能够了解上传的状态。</li></ul><h3 id="图片-视频上传和预览：" tabindex="-1">图片/视频上传和预览： <a class="header-anchor" href="#图片-视频上传和预览：" aria-hidden="true">#</a></h3><ul><li>图片上传和预览：在图片上传场景中，用户可以选择多张图片进行上传。通过切片上传，可以加快图片上传速度，并实时显示上传进度。同时，在上传完成后，可以提供预览功能，让用户可以立即查看上传的图片。</li><li>视频上传和预览：对于较大的视频文件，切片上传可以确保上传过程可靠且高效。同时，可以实现上传进度的实时展示。上传完成后，通过切片下载技术，用户可以流畅地观看视频，无需等待整个文件下载完成。</li></ul><h3 id="云存储和云盘应用中的文件操作：" tabindex="-1">云存储和云盘应用中的文件操作： <a class="header-anchor" href="#云存储和云盘应用中的文件操作：" aria-hidden="true">#</a></h3><ul><li>文件分块上传：云存储和云盘应用通常需要处理大量文件的上传。通过切片上传可以提高上传速度和稳定性，并允许用户中断并继续上传。</li><li>文件分块下载：当用户需要下载云存储或云盘中的大型文件时，可以使用切片下载技术，加快下载速度并提供中断恢复功能。</li><li>文件预览和在线编辑：通过将文件切片并进行预览，在线编辑，可以提供更好的用户体验。用户可以在不需完全下载文件的情况下，直接预览和编辑文件。</li></ul><blockquote><p>作者：狗头大军之江苏分军 <a href="https://juejin.cn/post/7255189826226602045" target="_blank" rel="noopener noreferrer">https://juejin.cn/post/7255189826226602045</a></p></blockquote></div></div><footer class="page-footer" data-v-7eddb2c4 data-v-07c132fc><div class="edit" data-v-07c132fc><div class="edit-link" data-v-07c132fc data-v-1ed99556><!----></div></div><div class="updated" data-v-07c132fc><!----></div></footer><div class="next-and-prev-link" data-v-7eddb2c4 data-v-38ede35f><div class="container" data-v-38ede35f><div class="prev" data-v-38ede35f><a class="link" href="/js/深度广度遍历" data-v-38ede35f><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" class="icon icon-prev" data-v-38ede35f><path d="M19,11H7.4l5.3-5.3c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0l-7,7c-0.1,0.1-0.2,0.2-0.2,0.3c-0.1,0.2-0.1,0.5,0,0.8c0.1,0.1,0.1,0.2,0.2,0.3l7,7c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3c0.4-0.4,0.4-1,0-1.4L7.4,13H19c0.6,0,1-0.4,1-1S19.6,11,19,11z"></path></svg><span class="text" data-v-38ede35f>深度广度遍历</span></a></div><div class="next" data-v-38ede35f><a class="link" href="/js/面试一" data-v-38ede35f><span class="text" data-v-38ede35f>面试一</span><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" class="icon icon-next" data-v-38ede35f><path d="M19.9,12.4c0.1-0.2,0.1-0.5,0-0.8c-0.1-0.1-0.1-0.2-0.2-0.3l-7-7c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l5.3,5.3H5c-0.6,0-1,0.4-1,1s0.4,1,1,1h11.6l-5.3,5.3c-0.4,0.4-0.4,1,0,1.4c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3l7-7C19.8,12.6,19.9,12.5,19.9,12.4z"></path></svg></a></div></div></div><!--[--><!--]--></div></main></div><!----><!--]--></div>
+    <script>__VP_HASH_MAP__ = JSON.parse("{\"nuxt_nuxt2.md\":\"d463e646\",\"nuxt_index.md\":\"4f34438f\",\"canvas_index.md\":\"32920643\",\"canvas_node-canvas.md\":\"db1a1efe\",\"canvas_文档转化为图片.md\":\"3c36eb73\",\"css_dropanddown.md\":\"f1772373\",\"css_flex布局.md\":\"19542b83\",\"css_grid布局.md\":\"a485ff28\",\"css_index.md\":\"98026b49\",\"css_interview.md\":\"6a7d0154\",\"css_scrollreveal.md\":\"b6fafc9b\",\"css_windicss.md\":\"b9208700\",\"css_大屏响应式布局.md\":\"1e12d8a1\",\"css_省略号.md\":\"2e60eb37\",\"docker_container.md\":\"c63de16e\",\"docker_index.md\":\"b432d4b4\",\"editorconfig_editorconfig配置.md\":\"fa85a524\",\"editorconfig_index.md\":\"cbb6fcd3\",\"esbuild_esbuild.md\":\"69156e4e\",\"esbuild_index.md\":\"c2099c4a\",\"eslint_eslint.md\":\"838da2fc\",\"eslint_index.md\":\"7df72470\",\"git_gitsubmodule.md\":\"3a55fa27\",\"git_gitsubtree.md\":\"ed4fa05e\",\"git_index.md\":\"7ea229b9\",\"git_打补丁.md\":\"80dd8bfb\",\"html_index.md\":\"4ed67439\",\"html_interview.md\":\"8ee28bde\",\"html_test.md\":\"33eb6b66\",\"html_重绘回流.md\":\"dd97593b\",\"husky_index.md\":\"08c24489\",\"index.md\":\"8d3c8f01\",\"jenkins_centos_jenkins.md\":\"9215576b\",\"jenkins_dockerinstalljenkins.md\":\"3536b0c9\",\"jenkins_index.md\":\"8bdd9a40\",\"js_v8 垃圾回收机制.md\":\"0f67aecd\",\"js_arrowfn.md\":\"ae29a348\",\"js_compose函数.md\":\"62689fec\",\"js_cookie.md\":\"97b9d874\",\"js_debounce.md\":\"bc3adff4\",\"js_designpatterns.md\":\"9e83fde0\",\"js_eventbus.md\":\"f0149237\",\"js_generator演变.md\":\"f5b5e750\",\"js_index.md\":\"ddc50abf\",\"js_interview.md\":\"eec027cf\",\"js_jslib.md\":\"1e007352\",\"js_js加载方式.md\":\"d749f59f\",\"js_package.json详解.md\":\"199d6868\",\"js_promise.md\":\"23128dda\",\"js_reg.md\":\"1b488088\",\"js_throttle.md\":\"43caf14e\",\"js_url.md\":\"b7ecc4da\",\"js_位运算.md\":\"fca75e42\",\"js_删除树节点.md\":\"52f33167\",\"js_原型链.md\":\"8108338e\",\"js_复制粘贴.md\":\"d69d7522\",\"js_拷贝.md\":\"ef17f313\",\"js_文件切片上传下载.md\":\"66344dc5\",\"js_最长递增子序列.md\":\"1c570fd8\",\"js_树转化.md\":\"c3d73d7b\",\"js_深度广度遍历.md\":\"e63bab51\",\"js_虚拟滚动.md\":\"07efa53d\",\"js_面试一.md\":\"dc294a6e\",\"linux_centos.md\":\"31923fb1\",\"linux_index.md\":\"ca8daa9c\",\"microfront_index.md\":\"5ffad8af\",\"microfront_microfront.md\":\"a245801c\",\"microfront_qiankun.md\":\"b6993df1\",\"microfront_systemjs.md\":\"98cbb6fd\",\"microfront_webcomponent容器.md\":\"1e5c9eb2\",\"microfront_无界微前端.md\":\"d203d477\",\"mongodb_index.md\":\"63ffde2c\",\"monorepo_index.md\":\"a3f50165\",\"monorepo_vite.md\":\"6c3ed3a1\",\"mysql_index.md\":\"fe3a341d\",\"nest_bcrypt加盐加密包.md\":\"23135b4a\",\"nest_index.md\":\"35ca61de\",\"nest_微信扫码登录.md\":\"9cb1a8f0\",\"nest_管道.md\":\"b52007d0\",\"nest_身份认证.md\":\"fe745fb7\",\"network_http.md\":\"a6eb945a\",\"network_index.md\":\"39a02814\",\"nginx_index.md\":\"893f149c\",\"nodejs_buffer.md\":\"ca652dfd\",\"nodejs_fs.md\":\"fbe9e59c\",\"nodejs_index.md\":\"76f134b8\",\"nodejs_node-excel.md\":\"505715b5\",\"nodejs_node-gyp.md\":\"e0e8fe54\",\"nodejs_前端鉴权.md\":\"d4ac6831\",\"npm_index.md\":\"875785df\",\"npm_npmrc.md\":\"a2e36c39\",\"npm_npm全局包link.md\":\"e5080819\",\"npm_npm第三方包汇总.md\":\"813337ce\",\"pm2_index.md\":\"db4e6b5e\",\"pnpm_index.md\":\"87da3023\",\"pnpm_pnpm.md\":\"046f8bf9\",\"prettier_index.md\":\"ec26d2fd\",\"python_beautifulsoup.md\":\"fa8a778d\",\"python_csv.md\":\"a5b743ef\",\"python_index.md\":\"d6b4b5e9\",\"python_pandas.md\":\"56225d78\",\"python_python.md\":\"1e25c277\",\"python_数据清洗.md\":\"55ed3af1\",\"react_index.md\":\"55379861\",\"roolup_index.md\":\"106c79ce\",\"roolup_roolup.md\":\"0768ddff\",\"thirdlib_index.md\":\"fe88a283\",\"thirdlib_moment.md\":\"69ba839f\",\"thirdlib_nodejs 操作华为obs.md\":\"1d184eec\",\"tools_index.md\":\"fd3ff5d6\",\"ts_index.md\":\"4e779474\",\"ts_infer.md\":\"2a3adbf3\",\"ts_infer学习.md\":\"d1ef3aa8\",\"ts_tsconfig配置文件.md\":\"b95b9efa\",\"ts_ts中extend奇技淫巧.md\":\"ceff01f1\",\"ts_ts注释问题.md\":\"01cdafd0\",\"ts_webpackts.md\":\"b54e23dd\",\"ts_装饰器.md\":\"7fede647\",\"vite_index.md\":\"9b63648a\",\"vite_vite配置.md\":\"10e00a82\",\"vite_构建工具.md\":\"b4bfeac5\",\"vscode_index.md\":\"f0fe79b8\",\"vscode_vscode本地调试vue代码.md\":\"db77e503\",\"vscode_插件样例.md\":\"3c71b5e1\",\"vscode_自定义插件.md\":\"324a6efe\",\"vue2_communication.md\":\"9f60d206\",\"vue2_diff算法.md\":\"fb2172e5\",\"vue2_index.md\":\"d75df714\",\"vue2_interview.md\":\"ddf3ce67\",\"vue2_jsx.md\":\"210fd957\",\"vue2_nexttick原理.md\":\"1f6f4ac2\",\"vue2_provide-inject使用.md\":\"04458e58\",\"vue2_vue代码片段.md\":\"bc3c67a3\",\"vue2_watch_computed.md\":\"e099c387\",\"vue2_双向数据绑定.md\":\"11fd644a\",\"vue3_suspense.md\":\"ecbb3412\",\"vue3_compositionapi.md\":\"8e187761\",\"vue3_defineemits.md\":\"5c31961b\",\"vue3_defineprops.md\":\"50185c64\",\"vue3_index.md\":\"9c8c196f\",\"vue3_reactive.md\":\"b2cfa629\",\"vue3_vmodel.md\":\"adfd5503\",\"vue3_vue3代码片段.md\":\"04ee495a\",\"vue3_vue3学习图谱.md\":\"0cb303d2\",\"web_qps.md\":\"2ee0ef5b\",\"web_index.md\":\"bfdcb44b\",\"web_代理服务器搭建.md\":\"13d66c33\",\"web_性能优化.md\":\"50fabba8\",\"webpack_index.md\":\"a9577f90\",\"webpack_plugin.md\":\"392c92d7\"}")</script>
+    <script type="module" async src="/assets/app.87eb6f1c.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,1 @@
+import{_ as n,c as s,o as a,d as t}from"./app.87eb6f1c.js";const f='{"title":"\u5220\u9664\u6811\u8282\u70B9","description":"","frontmatter":{},"headers":[],"relativePath":"js/\u5220\u9664\u6811\u8282\u70B9.md"}',p={},o=t("",6),e=[o];function c(u,l,k,i,r,d){return a(),s("div",null,e)}var y=n(p,[["render",c]]);export{f as __pageData,y as default};

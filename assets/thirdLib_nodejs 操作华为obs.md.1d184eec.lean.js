@@ -1,0 +1,1 @@
+import{_ as n,c as s,o as a,d as t}from"./app.87eb6f1c.js";const f='{"title":"nodejs \u64CD\u4F5C\u534E\u4E3Aobs","description":"","frontmatter":{},"headers":[],"relativePath":"thirdLib/nodejs \u64CD\u4F5C\u534E\u4E3Aobs.md"}',p={},o=t("",2),e=[o];function c(u,l,k,i,r,d){return a(),s("div",null,e)}var y=n(p,[["render",c]]);export{f as __pageData,y as default};

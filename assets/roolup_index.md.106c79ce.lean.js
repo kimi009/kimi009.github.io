@@ -1,0 +1,1 @@
+import{_ as n,c as s,o as a,d as e}from"./app.87eb6f1c.js";const h='{"title":"roolup \u4F7F\u7528\u6307\u5357","description":"","frontmatter":{},"headers":[],"relativePath":"roolup/index.md"}',p={},o=e("",5),t=[o];function r(l,c,i,u,d,k){return a(),s("div",null,t)}var m=n(p,[["render",r]]);export{h as __pageData,m as default};

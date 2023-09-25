@@ -1,0 +1,1 @@
+import{_ as n,c as s,o as a,d as p}from"./app.87eb6f1c.js";const b='{"title":"\u6700\u957F\u9012\u589E\u5B50\u5E8F\u5217","description":"","frontmatter":{},"headers":[],"relativePath":"js/\u6700\u957F\u9012\u589E\u5B50\u5E8F\u5217.md"}',t={},o=p("",4),c=[o];function e(u,l,k,i,r,m){return a(),s("div",null,c)}var f=n(t,[["render",e]]);export{b as __pageData,f as default};

@@ -1,0 +1,1 @@
+import{_ as n,c as s,o as a,d as t}from"./app.87eb6f1c.js";const f='{"title":"\u8282\u6D41","description":"","frontmatter":{},"headers":[],"relativePath":"js/throttle.md"}',p={},o=t("",3),e=[o];function c(l,u,k,i,r,m){return a(),s("div",null,e)}var w=n(p,[["render",c]]);export{f as __pageData,w as default};

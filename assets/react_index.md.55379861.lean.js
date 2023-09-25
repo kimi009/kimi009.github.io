@@ -1,0 +1,1 @@
+import{_ as n,c as a,o as s,d as t}from"./app.87eb6f1c.js";const g='{"title":"\u521D\u63A2React","description":"","frontmatter":{},"headers":[{"level":3,"title":"\u521D\u63A2React","slug":"\u521D\u63A2react"}],"relativePath":"react/index.md"}',p={},o=t("",9),e=[o];function c(l,u,r,k,i,d){return s(),a("div",null,e)}var _=n(p,[["render",c]]);export{g as __pageData,_ as default};

@@ -1,0 +1,1 @@
+import{_ as n,c as s,o as a,d as t}from"./app.87eb6f1c.js";const d='{"title":"tsconfig \u4ECB\u7ECD","description":"","frontmatter":{},"headers":[],"relativePath":"ts/tsconfig\u914D\u7F6E\u6587\u4EF6.md"}',o={},e=t("",6),p=[e];function c(r,l,u,i,k,m){return a(),s("div",null,p)}var y=n(o,[["render",c]]);export{d as __pageData,y as default};

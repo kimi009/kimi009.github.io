@@ -1,0 +1,1 @@
+import{_ as s,c as n,o as a,d as p}from"./app.87eb6f1c.js";const d='{"title":"prettier","description":"","frontmatter":{},"headers":[],"relativePath":"prettier/index.md"}',t={},e=p("",4),o=[e];function r(c,l,k,i,u,m){return a(),n("div",null,o)}var q=s(t,[["render",r]]);export{d as __pageData,q as default};

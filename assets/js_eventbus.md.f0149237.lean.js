@@ -1,0 +1,1 @@
+import{_ as n,c as s,o as a,d as t}from"./app.87eb6f1c.js";const y='{"title":"eventbus","description":"","frontmatter":{},"headers":[],"relativePath":"js/eventbus.md"}',p={},o=t("",2),c=[o];function e(u,k,l,i,r,f){return a(),s("div",null,c)}var g=n(p,[["render",e]]);export{y as __pageData,g as default};

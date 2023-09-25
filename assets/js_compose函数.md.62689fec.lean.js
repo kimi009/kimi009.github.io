@@ -1,0 +1,1 @@
+import{_ as n,c as s,o as a,d as t}from"./app.87eb6f1c.js";const f='{"title":"compose\u51FD\u6570","description":"","frontmatter":{},"headers":[],"relativePath":"js/compose\u51FD\u6570.md"}',p={},o=t("",5),c=[o];function e(u,l,k,i,r,d){return a(),s("div",null,c)}var _=n(p,[["render",e]]);export{f as __pageData,_ as default};

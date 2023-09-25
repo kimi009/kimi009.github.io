@@ -1,0 +1,1 @@
+import{_ as n,c as s,o as a,d as t}from"./app.87eb6f1c.js";const d='{"title":"scrollReveal","description":"","frontmatter":{},"headers":[],"relativePath":"css/scrollReveal.md"}',p={},o=t("",4),e=[o];function c(l,u,k,i,r,g){return a(),s("div",null,e)}var v=n(p,[["render",c]]);export{d as __pageData,v as default};

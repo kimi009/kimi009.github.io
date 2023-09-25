@@ -1,0 +1,1 @@
+import{_ as n,c as a,o as s,d as t}from"./app.87eb6f1c.js";const f='{"title":"\u6D4B\u8BD5\u6587\u672C\u8D85\u51FA\u95EE\u9898","description":"","frontmatter":{},"headers":[],"relativePath":"html/test.md"}',p={},o=t("",2),c=[o];function e(u,l,k,i,r,g){return s(),a("div",null,c)}var h=n(p,[["render",e]]);export{f as __pageData,h as default};

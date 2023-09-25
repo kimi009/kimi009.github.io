@@ -1,0 +1,1 @@
+import{_ as n,c as s,o as a,d as t}from"./app.87eb6f1c.js";const m='{"title":"css\u5E38\u89C1\u9762\u8BD5\u6C47\u603B","description":"","frontmatter":{},"headers":[],"relativePath":"css/interview.md"}',p={},o=t("",5),e=[o];function c(l,i,r,u,k,d){return a(),s("div",null,e)}var _=n(p,[["render",c]]);export{m as __pageData,_ as default};

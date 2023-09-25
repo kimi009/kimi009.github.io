@@ -1,0 +1,1 @@
+import{_ as e,c as a,o as s,d as t}from"./app.87eb6f1c.js";var n="/assets/1.0dda2c7b.png";const f='{"title":"mysql","description":"","frontmatter":{},"headers":[],"relativePath":"mysql/index.md"}',r={},o=t("",6),p=[o];function l(i,c,d,_,m,u){return s(),a("div",null,p)}var h=e(r,[["render",l]]);export{f as __pageData,h as default};

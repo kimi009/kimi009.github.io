@@ -1,0 +1,1 @@
+import{_ as t,c as p,o as e,d as s}from"./app.87eb6f1c.js";var a="/assets/1.8a833da3.png";const m='{"title":"http","description":"","frontmatter":{},"headers":[],"relativePath":"network/http.md"}',r={},o=s("",10),_=[o];function c(n,h,i,l,d,u){return e(),p("div",null,_)}var g=t(r,[["render",c]]);export{m as __pageData,g as default};

@@ -1,0 +1,1 @@
+import{_ as e,c as t,o,d as i}from"./app.87eb6f1c.js";const _='{"title":"gitsubmodule","description":"","frontmatter":{},"headers":[],"relativePath":"git/gitsubmodule.md"}',r={},p=i("",3),l=[p];function c(s,u,d,a,m,n){return o(),t("div",null,l)}var b=e(r,[["render",c]]);export{_ as __pageData,b as default};

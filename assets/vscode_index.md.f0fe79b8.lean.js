@@ -1,0 +1,1 @@
+import{_ as s,c as n,o as a,d as t}from"./app.87eb6f1c.js";const g='{"title":"vscode\u914D\u7F6E","description":"","frontmatter":{},"headers":[],"relativePath":"vscode/index.md"}',o={},p=t("",11),e=[p];function r(c,u,l,k,i,q){return a(),n("div",null,e)}var y=s(o,[["render",r]]);export{g as __pageData,y as default};

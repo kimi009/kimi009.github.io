@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as r,d as a}from"./app.87eb6f1c.js";const f='{"title":"CSV","description":"","frontmatter":{},"headers":[],"relativePath":"python/CSV.md"}',o={},n=a("",4),s=[n];function i(c,_,p,h,d,l){return r(),t("div",null,s)}var m=e(o,[["render",i]]);export{f as __pageData,m as default};

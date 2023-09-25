@@ -1,0 +1,1 @@
+import{_ as s,c as n,o as a,d as t}from"./app.87eb6f1c.js";const y='{"title":"ts\u4E2Dextend\u5947\u6280\u6DEB\u5DE7","description":"","frontmatter":{},"headers":[],"relativePath":"ts/ts\u4E2Dextend\u5947\u6280\u6DEB\u5DE7.md"}',p={},o=t("",6),e=[o];function c(l,r,k,i,u,d){return a(),n("div",null,e)}var _=s(p,[["render",c]]);export{y as __pageData,_ as default};
